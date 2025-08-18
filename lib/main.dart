@@ -6,24 +6,24 @@ void main(){
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("Hello flutter"),),
-        body: SingleChildScrollView(
-          child: Column(
+        body: 
+        ListView(
           children: [
-            MyApp(),
-            MyButton(),
-            MyImage(),
-            SizedBox(height: 20,),
-            ClipImage(),
-            SizedBox(height: 20,),
-            LocalImage(),
-            Icon(CustomIcon.gouwuche,size: 40,color: Colors.orange),
-            Icon(CustomIcon.weixin,size: 40,color: Colors.orange)
+            // MyApp(),
+            // MyButton(),
+            // MyImage(),
+            // SizedBox(height: 20,),
+            // ClipImage(),
+            // SizedBox(height: 20,),
+            // LocalImage(),
+            // Icon(CustomIcon.gouwuche,size: 40,color: Colors.orange),
+            // Icon(CustomIcon.weixin,size: 40,color: Colors.orange),
+            MyList()
 
           ],
         ),
         )
       )
-    )
   );
 }
 
@@ -141,6 +141,23 @@ class LocalImage extends StatelessWidget {
         ],
       ),
       ) 
+    );
+  }
+}
+
+
+class MyList extends StatelessWidget {
+  const MyList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ListTile(leading: Icon(Icons.attach_file), title: Text("我是列表"),),
+        Divider(),
+        ListTile(title: Text("我是列表2"),trailing: Icon(Icons.bedtime),subtitle: Text("我是副标题我是副标题我是副标题"),),
+        Divider(),
+      ],
     );
   }
 }
